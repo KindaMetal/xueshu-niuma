@@ -14,7 +14,7 @@ export async function exportCardToImage(elementId, resultFileName = "my_academic
   try {
     // 渲染参数优化：为了截出来更清晰的高反差色彩
     const canvas = await html2canvas(el, {
-      scale: 2, // 视网膜高清分辨率
+      scale: 3, // 极限视网膜超清分辨率
       backgroundColor: "#0a0a0f", // 咬死深空底色，防止透明背景污染发光特效
       useCORS: true, // 允许加载外部图片资产(头像等)
       logging: false

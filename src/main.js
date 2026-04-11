@@ -102,15 +102,15 @@ function renderResult() {
                style="border-bottom: 2px solid ${t.themeColor};"
                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'450\\'><rect width=\\'100%\\' height=\\'100%\\' fill=\\'%23111\\'/><text x=\\'50%\\' y=\\'50%\\' font-size=\\'20\\' text-anchor=\\'middle\\' fill=\\'%23555\\'>[替身使者迷失于亚空间]</text></svg>'">
           
-          <h1 style="font-size:2.2rem; margin:1rem 0 0.5rem 0; letter-spacing: 2px; text-transform:uppercase;">${payload.main_title.split('：')[1] || payload.main_title}</h1>
-          <h3 style="background:${t.themeColor}; color:#000; padding:0.3rem 0.5rem; display:inline-block; border-radius:3px; margin-top:0;">${payload.subtitle.split('：')[1] || payload.subtitle}</h3>
+          <h1 style="font-size:2.8rem; margin:1.5rem 0 0.5rem 0; letter-spacing: 2px; text-transform:uppercase;">${payload.main_title.split('：')[1] || payload.main_title}</h1>
+          <h3 style="background:${t.themeColor}; color:#000; padding:0.4rem 0.6rem; display:inline-block; border-radius:3px; margin-top:0; font-size:1.1rem;">${payload.subtitle.split('：')[1] || payload.subtitle}</h3>
           
-          <p style="font-size:1rem; text-align: left; background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 4px; border-left: 4px solid ${t.themeColor}; margin-top: 1.5rem;">
+          <p style="font-size:1.3rem; line-height:1.7; text-align: left; background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 4px; border-left: 5px solid ${t.themeColor}; margin-top: 1.5rem;">
             ${payload.judgement}
           </p>
           
-          <div style="display:flex; gap: 0.5rem; margin-top:2rem; font-size: 0.85rem; text-align: left;">
-            <div style="flex:1; border: 1px solid rgba(255,255,255,0.2); padding:0.8rem; background: rgba(255,255,255,0.05);">
+          <div style="display:flex; gap: 0.8rem; margin-top:2rem; font-size: 1.1rem; text-align: left;">
+            <div style="flex:1; border: 1px solid rgba(255,255,255,0.2); padding:1rem; background: rgba(255,255,255,0.05); border-radius:4px;">
                <strong style="color: ${t.themeColor};">共鸣 (Best Match)</strong><br>
                ${payload.matches.best.desc}
             </div>
