@@ -7,11 +7,7 @@ import { exportCardToImage } from './utils/dom_exporter.js';
 import { Tracker } from './core/tracker.js';
 
 // WeChat Interceptor
-const ua = navigator.userAgent.toLowerCase();
-if (ua.indexOf('micromessenger') !== -1) {
-  document.getElementById('wechat-overlay').style.display = 'flex';
-  throw new Error('WeChat environment blocked');
-}
+// WeChat Interceptor Block REMOVED - Native support unlocked
 
 const dims = MasterData.getDimensions();
 const arches = MasterData.getArchetypes();

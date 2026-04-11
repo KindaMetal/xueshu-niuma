@@ -23,13 +23,42 @@ export async function exportCardToImage(elementId, resultFileName = "my_academic
     // 转化为图片 URL
     const imageBase64 = canvas.toDataURL("image/png");
 
-    // 创建虚拟链接触发强制下载
-    const downloadLink = document.createElement("a");
-    downloadLink.href = imageBase64;
-    downloadLink.download = resultFileName;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+    const ua = navigator.userAgent.toLowerCase();
+    const isMobile = /iphone|ipad|ipod|android|micromessenger/i.test(ua);
+
+    if (isMobile) {
+      // 弹出供用户长按保存的全屏遮罩
+      const overlay = document.createElement("div");
+      overlay.id = "wechat-export-overlay";
+      overlay.style.cssText = "position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(10,10,15,0.95); z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; backdrop-filter: blur(10px); animation: fadeIn 0.3s ease-out;";
+      
+      const img = document.createElement("img");
+      img.src = imageBase64;
+      img.style.cssText = "max-width:85%; max-height:75%; border-radius:8px; box-shadow:0 0 30px rgba(0, 255, 170, 0.4); object-fit: contain;";
+      
+      const tip = document.createElement("p");
+      tip.innerText = "🔮 灵魂载体已具象化\n(请长按上方图片保存至相册，可无阻碍发送朋友圈)";
+      tip.style.cssText = "color:#00ffaa; margin-top:20px; font-weight:bold; letter-spacing:1px; line-height:1.5; text-align:center; font-family: 'Courier New', monospace; text-shadow: 0 0 5px rgba(0,255,170,0.5);";
+      
+      const closeBtn = document.createElement("button");
+      closeBtn.innerText = "✕ 返回终端";
+      closeBtn.style.cssText = "position:absolute; bottom:5%; background:transparent; border:1px solid #555; color:#888; border-radius:4px; padding:8px 20px; font-size:1rem;";
+      closeBtn.onclick = () => document.body.removeChild(overlay);
+
+      overlay.appendChild(img);
+      overlay.appendChild(tip);
+      overlay.appendChild(closeBtn);
+      document.body.appendChild(overlay);
+
+    } else {
+      // PC 端保持直接触发静默下载
+      const downloadLink = document.createElement("a");
+      downloadLink.href = imageBase64;
+      downloadLink.download = resultFileName;
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
 
     return true;
   } catch (error) {
