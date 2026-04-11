@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "description": "极简判词模板池 (用于测试结果最终生成)",
+  "templates": [
+    {
+      "id": "TPL_01",
+      "style": "极简死鱼眼风",
+      "main_title_format": "学术鉴定量表结果：【{archetype_name}】",
+      "subtitle_format": "核心标签：{top_traits}",
+      "judgement_text": "{behavior_summary} <br><br>💡 <b>终极建议：</b><br>{archetype_advice}",
+      "match_section": {
+        "best_match_title": "天选知音",
+        "best_match_desc": "<strong style='color:#00ffaa;font-size:1.1rem;'>{match_positive}</strong><br><br><span style='color:#ccc;font-size:0.9rem;'>{partner_reason}</span>",
+        "worst_match_title": "学术死敌",
+        "worst_match_desc": "<strong style='color:#ff0044;font-size:1.1rem;'>{match_negative}</strong><br><br><span style='color:#ccc;font-size:0.9rem;'>{enemy_reason}</span>"
+      }
+    },
+    {
+      "id": "TPL_02",
+      "style": "强装镇定的发疯风",
+      "main_title_format": "确诊完毕：满级 {archetype_name}",
+      "subtitle_format": "警告：该用户 {top_traits} 超标，请课题组注意防范。",
+      "judgement_text": "你以为自己是推进人类科学突破的火炬手，实际上在导师眼里你只是个 {behavior_summary} 的廉价电池。你用极其荒诞的方式处理实验的溃败，每当你自以为掌控了全场，其实只是你的精神屏障在强制保护你不被退学通知击毙。",
+      "match_section": {
+        "best_match_title": "✅ 最佳学术血包",
+        "best_match_desc": "{match_positive} 是能在深夜听你抱怨五小时甚至帮你借试剂的完美怨种。",
+        "worst_match_title": "❌ 必爆雷区",
+        "worst_match_desc": "千万别和 {match_negative} 同一个大组，你们见面第一天就会为了水龙头怎么关而大打出手。"
+      }
+    },
+    {
+      "id": "TPL_03",
+      "style": "高维冷眼嘲讽风",
+      "main_title_format": "鉴定结果：无可救药的 {archetype_name}",
+      "subtitle_format": "光谱定位：极度偏向 {top_traits}。",
+      "judgement_text": "在这个为了几张废纸（Paper）疯狂互咬的圈子里，你的生存策略是 {behavior_summary}。有趣的是，你总是在深夜突然涌起宏大的科研野心，而在第二天中午十二点才艰难地从被窝里摸出手机，刷一条导师刚发的催促微信然后当场尿遁。",
+      "match_section": {
+        "best_match_title": "✅ 灵魂宿主",
+        "best_match_desc": "寄生在 {match_positive} 身上，你这辈子都有救了。",
+        "worst_match_title": "❌ 宿命天敌",
+        "worst_match_desc": "一旦 {match_negative} 出现在盲审名单上，你就可以准备去重修了。"
+      }
+    }
+  ]
+}

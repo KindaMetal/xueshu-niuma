@@ -1,0 +1,72 @@
+/* Route B 核心极压动画流 (High Pressure Animations) */
+
+/* 1. 题目登场的急促滑入 (模仿老板半夜发难的压迫感) */
+@keyframes slideInFast {
+  0% { transform: translateY(50px) scale(0.95); opacity: 0; }
+  60% { transform: translateY(-5px) scale(1.02); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.anim-enter {
+  animation: slideInFast 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* 2. 题目消失的溃散感 (模仿被毙稿的绝望) */
+@keyframes slideOutDrop {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100px) rotate(-5deg); opacity: 0; }
+}
+
+.anim-exit {
+  animation: slideOutDrop 0.2s cubic-bezier(1, 0, 0, 1) forwards;
+}
+
+/* 3. 核爆级结果展现动效 (如同张榜公布延毕名单的震慑) */
+@keyframes stampImprint {
+  0% { transform: scale(3); opacity: 0; filter: blur(10px); }
+  50% { transform: scale(0.9); opacity: 1; filter: blur(0px); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.result-stamp {
+  animation: stampImprint 0.6s cubic-bezier(0.2, -2, 0.8, 2) forwards;
+}
+
+/* 4. 轻微的焦躁晃动 (加在特定文字上，模仿喝了6杯美式的心跳) */
+@keyframes nervousShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  75% { transform: translateX(2px) rotate(1deg); }
+}
+
+.nervous-text:hover {
+  animation: nervousShake 0.1s infinite;
+  color: var(--c-accent);
+  cursor: crosshair;
+}
+
+/* UI 结构排版 */
+.quiz-board {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.opt-btn {
+  margin-bottom: var(--sp-normal);
+  text-align: left;
+  border-radius: var(--b-radius-rough);
+}
+
+.avatar-frame {
+  width: 100%;
+  max-width: 400px;
+  border: var(--b-weight-thick) var(--b-style) var(--c-text);
+  margin-bottom: var(--sp-normal);
+  background: #eee;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  box-shadow: var(--shadow-rough);
+}

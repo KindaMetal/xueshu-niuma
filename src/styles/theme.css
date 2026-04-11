@@ -1,0 +1,23 @@
+:root {
+  --bg-color: #0d1117;
+  --text-primary: #e6edf3;
+  --text-dim: #8b949e;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.shell-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+hr {
+  border-color: #21262d;
+  margin: 2rem 0;
+}

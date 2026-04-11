@@ -1,0 +1,95 @@
+/* Route C: Cyber Tarot & Stand System (TCG Style) Token System */
+:root {
+  /* 深邃真空宇宙底板 */
+  --c-bg: #0a0a0f;       
+  --c-text: #e0e0e0;     
+  --c-surface: #12121a; 
+
+  /* 边框粗犷化模拟线条手绘感 -> 转为塔罗金工边框 */
+  --b-weight-thin: 1px;
+  --b-weight-thick: 2px;
+  --b-style: solid;
+  --b-radius-rough: 0px; 
+  --b-radius-button: 4px;
+
+  /* 文字粗暴规范 */
+  --font-doc: 'Courier New', Courier, monospace, system-ui;
+  --font-title: 'Impact', 'SimHei', sans-serif;
+
+  /* 间距 */
+  --sp-tight: 0.5rem;
+  --sp-normal: 1rem;
+  --sp-loose: 3rem;
+  
+  /* 塔罗霓虹发光阴影特效 */
+  --shadow-neon-red: 0 0 10px rgba(255, 0, 68, 0.5), 0 0 20px rgba(255, 0, 68, 0.3);
+  --shadow-neon-green: 0 0 10px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3);
+  --shadow-neon-orange: 0 0 10px rgba(255, 85, 0, 0.5), 0 0 20px rgba(255, 85, 0, 0.3);
+  --shadow-card-elevated: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-doc);
+  line-height: 1.6;
+  /* 赛博网格背景 */
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
+}
+
+.btn-sketch {
+  appearance: none;
+  background: var(--c-surface);
+  color: var(--c-text);
+  border: var(--b-weight-thin) var(--b-style) rgba(255,255,255,0.2);
+  padding: var(--sp-normal) 2rem;
+  font-family: var(--font-doc);
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  border-radius: var(--b-radius-button);
+}
+
+.btn-sketch:hover {
+  transform: translateY(-2px);
+  border-color: #fff;
+  box-shadow: 0 8px 15px rgba(255,255,255,0.1);
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+/* 塔罗牌外层画框 */
+.tarot-frame {
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card-elevated);
+  position: relative;
+  background: var(--c-surface);
+}
+
+/* 发光的内层金工描边 */
+.tarot-inner-board {
+  border: 2px solid;
+  margin: 8px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* AI立绘槽 */
+.tarot-image-stand {
+  width: 100%;
+  aspect-ratio: 16/18;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  /* Jojo风强高光 */
+  mix-blend-mode: screen; 
+}

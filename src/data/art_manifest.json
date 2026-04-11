@@ -1,0 +1,139 @@
+{
+  "version": "2.0",
+  "description": "全域 16 人格极压塔罗牌 - 美术渲染清单",
+  "fallback": {
+    "standAssetKey": "/assets/placeholder_avatar.webp",
+    "themeKey": "theme-abyss",
+    "cardFrameKey": "frame-rusty"
+  },
+  "manifest": {
+    "ESTJ": {
+      "rarityToneKey": "SR",
+      "standAssetKey": "/assets/stand_estj.webp",
+      "themeColor": "#ff0044",
+      "cardFrameKey": "frame-neon-boss",
+      "standName": "【支配时环·暴君】",
+      "fxLayer": "glitch-red"
+    },
+    "INFP": {
+      "rarityToneKey": "SSR",
+      "standAssetKey": "/assets/stand_infp.webp",
+      "themeColor": "#00ffaa",
+      "cardFrameKey": "frame-toxic-tears",
+      "standName": "【悲泣史莱姆·共生】",
+      "fxLayer": "bio-glow"
+    },
+    "ENTP": {
+      "rarityToneKey": "UR",
+      "standAssetKey": "/assets/stand_entp.webp",
+      "themeColor": "#ff5500",
+      "cardFrameKey": "frame-coffee-burn",
+      "standName": "【死线千手·修罗】",
+      "fxLayer": "fire-sparks"
+    },
+    "ENTJ": {
+      "rarityToneKey": "UR",
+      "standAssetKey": "/assets/stand_entj_1775874473168.webp",
+      "themeColor": "#ffd700",
+      "cardFrameKey": "frame-gold",
+      "standName": "【金权律法·控偶师】",
+      "fxLayer": "gold-spark"
+    },
+    "ESFJ": {
+      "rarityToneKey": "R",
+      "standAssetKey": "/assets/stand_esfj_1775874491115.webp",
+      "themeColor": "#ffaaaa",
+      "cardFrameKey": "frame-pink",
+      "standName": "【千手圣母·血泪】",
+      "fxLayer": "pink-glow"
+    },
+    "ENFJ": {
+      "rarityToneKey": "SR",
+      "standAssetKey": "/assets/stand_enfj_1775874505421.webp",
+      "themeColor": "#ff2222",
+      "cardFrameKey": "frame-red",
+      "standName": "【喧嚣神谕·号角】",
+      "fxLayer": "red-alert"
+    },
+    "ESTP": {
+      "rarityToneKey": "SSR",
+      "standAssetKey": "/assets/stand_estp_1775874520539.webp",
+      "themeColor": "#ff00ff",
+      "cardFrameKey": "frame-magenta",
+      "standName": "【极速深渊·赌徒】",
+      "fxLayer": "magenta-glider"
+    },
+    "ESFP": {
+      "rarityToneKey": "SR",
+      "standAssetKey": "/assets/stand_esfp_1775874540357.webp",
+      "themeColor": "#ff0088",
+      "cardFrameKey": "frame-hotpink",
+      "standName": "【迷幻炫音·乱神】",
+      "fxLayer": "club-lights"
+    },
+    "ENFP": {
+      "rarityToneKey": "SSR",
+      "standAssetKey": "/assets/stand_enfp_1775874560885.webp",
+      "themeColor": "#ffff00",
+      "cardFrameKey": "frame-yellow",
+      "standName": "【混沌万象·星爆】",
+      "fxLayer": "yellow-burst"
+    },
+    "ISTJ": {
+      "rarityToneKey": "SR",
+      "standAssetKey": "/assets/stand_istj_1775874576440.webp",
+      "themeColor": "#00ffff",
+      "cardFrameKey": "frame-cyan",
+      "standName": "【绝对零度·机神】",
+      "fxLayer": "ice-circuit"
+    },
+    "INTJ": {
+      "rarityToneKey": "UR",
+      "standAssetKey": "/assets/stand_intj_1775874589418.webp",
+      "themeColor": "#4400ff",
+      "cardFrameKey": "frame-purple",
+      "standName": "【幽影棋盘·弈子】",
+      "fxLayer": "dark-stars"
+    },
+    "ISFJ": {
+      "rarityToneKey": "R",
+      "standAssetKey": "/assets/stand_isfj_1775874604280.webp",
+      "themeColor": "#88ccff",
+      "cardFrameKey": "frame-lightblue",
+      "standName": "【镣铐誓约·净罪】",
+      "fxLayer": "water-ripple"
+    },
+    "INFJ": {
+      "rarityToneKey": "UR",
+      "standAssetKey": "/assets/stand_infj_1775874618287.webp",
+      "themeColor": "#aa00ff",
+      "cardFrameKey": "frame-violet",
+      "standName": "【深渊视界·星子】",
+      "fxLayer": "galaxy-swirl"
+    },
+    "ISTP": {
+      "rarityToneKey": "SR",
+      "standAssetKey": "/assets/stand_istp_1775874635191.webp",
+      "themeColor": "#aaddff",
+      "cardFrameKey": "frame-ice",
+      "standName": "【孤高机装·寒霜】",
+      "fxLayer": "ice-fog"
+    },
+    "INTP": {
+      "rarityToneKey": "SSR",
+      "standAssetKey": "/assets/stand_intp_1775874652290.webp",
+      "themeColor": "#00ff44",
+      "cardFrameKey": "frame-matrix",
+      "standName": "【矩阵剥离·浮脑】",
+      "fxLayer": "matrix-code"
+    },
+    "ISFP": {
+      "rarityToneKey": "SSR",
+      "standAssetKey": "/assets/stand_isfp_1775874667786.webp",
+      "themeColor": "#ffbbdd",
+      "cardFrameKey": "frame-cherry",
+      "standName": "【落樱隐灭·悲兔】",
+      "fxLayer": "petal-fall"
+    }
+  }
+}
