@@ -9,7 +9,7 @@
   "manifest": {
     "ESTJ": {
       "rarityToneKey": "SR",
-      "standAssetKey": "/assets/stand_estj.webp",
+      "standAssetKey": "/assets/avatar_estj.webp",
       "themeColor": "#ff0044",
       "cardFrameKey": "frame-neon-boss",
       "standName": "【支配时环·暴君】",
@@ -17,7 +17,7 @@
     },
     "INFP": {
       "rarityToneKey": "SSR",
-      "standAssetKey": "/assets/stand_infp.webp",
+      "standAssetKey": "/assets/avatar_infp.webp",
       "themeColor": "#00ffaa",
       "cardFrameKey": "frame-toxic-tears",
       "standName": "【悲泣史莱姆·共生】",
