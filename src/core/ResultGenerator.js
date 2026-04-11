@@ -69,7 +69,7 @@ export class ResultGenerator {
       // 塔罗牌注入管线
       tarot: {
         rarity: artNode.rarityToneKey || "N",
-        standImage: artNode.standAssetKey,
+        standImage: artNode.standAssetKey + "?v=" + Date.now(),
         themeColor: artNode.themeColor || "#fff",
         frameKey: artNode.cardFrameKey,
         standName: standName,
