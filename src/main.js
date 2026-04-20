@@ -5,6 +5,7 @@ import { ScoringEngine } from './core/ScoringEngine.js';
 import { ResultGenerator } from './core/ResultGenerator.js';
 import { exportCardToImage } from './utils/dom_exporter.js';
 import { Tracker } from './core/tracker.js';
+import { audioSystem } from './core/AudioEngine.js';
 
 // WeChat Interceptor
 // WeChat Interceptor Block REMOVED - Native support unlocked
@@ -53,6 +54,9 @@ function renderQuestion() {
 
   document.querySelectorAll('.opt-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
+      audioSystem.init(); // 初始化音频上下文并开始BGM
+      audioSystem.playClick(); // 播放点击音效
+      
       const idx = e.target.getAttribute('data-idx');
       userAnswers.push(q.options[idx].weight);
       
@@ -112,6 +116,8 @@ function renderTerminalTransition() {
          p.style.textShadow = '0 0 5px #f04';
       }
 
+      audioSystem.playTerminalGlitch();
+
       i++;
       setTimeout(typeLine, 350 + Math.random() * 500); 
     } else {
@@ -135,6 +141,7 @@ function renderTerminalTransition() {
 }
 
 function renderResult() {
+  audioSystem.playResultImpact();
   const { code } = scorer.evaluate(userAnswers);
   // 保底容错
   const safeCode = arches.archetypes[code] ? code : "INFP";
