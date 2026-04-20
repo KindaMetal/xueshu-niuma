@@ -67,11 +67,71 @@ function renderQuestion() {
         if(currentQuestionIndex < scenes.scenarios.length) {
           renderQuestion();
         } else {
-          renderResult();
+          renderTerminalTransition();
         }
       }, 200); 
     });
   });
+}
+
+function renderTerminalTransition() {
+  appDiv.innerHTML = `
+    <div class="shell-container" style="max-width: 600px; margin: 4rem auto; padding: 2rem; font-family: 'Courier New', monospace; color: #0f0; background: #050505; border: 1px solid #0f0; box-shadow: 0 0 20px rgba(0,255,0,0.2);">
+      <h3 style="margin-top:0; border-bottom: 1px solid #0f0; padding-bottom: 0.5rem; text-transform: uppercase;">SYS.TERMINAL // DECODING</h3>
+      <div id="terminal-output" style="min-height: 250px; font-size: 1.1rem; line-height: 1.8;"></div>
+    </div>
+  `;
+  
+  const lines = [
+    "> 正在连接潜意识深网...",
+    "> 提取脑皮层学术受击数据...",
+    "> [警告] 检索到极度超载的焦虑特征峰值！",
+    "> 正在强行剥离表层防御人格...",
+    "> 匹配阿卡西维度坐标...",
+    "> 替身（STAND）具象化准备完毕。"
+  ];
+  
+  const output = document.getElementById('terminal-output');
+  let i = 0;
+  
+  function typeLine() {
+    if (i < lines.length) {
+      const p = document.createElement('p');
+      p.style.margin = '0.5rem 0';
+      p.style.textShadow = '0 0 5px #0f0';
+      
+      // 移除上一行的假光标
+      if (i > 0) output.lastChild.innerText = lines[i-1]; 
+      
+      p.innerText = lines[i] + ' █';
+      output.appendChild(p);
+      
+      // 对于警告信息给予红色高亮
+      if(lines[i].includes('[警告]')) {
+         p.style.color = '#f04';
+         p.style.textShadow = '0 0 5px #f04';
+      }
+
+      i++;
+      setTimeout(typeLine, 350 + Math.random() * 500); 
+    } else {
+      setTimeout(() => {
+        output.lastChild.innerText = lines[lines.length-1];
+        // 白屏爆闪过渡
+        appDiv.style.transition = 'all 0.1s';
+        appDiv.style.opacity = '0';
+        appDiv.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          appDiv.style.opacity = '1';
+          appDiv.style.transform = 'scale(1)';
+          appDiv.style.transition = '';
+          renderResult();
+        }, 150);
+      }, 1000);
+    }
+  }
+  
+  setTimeout(typeLine, 400);
 }
 
 function renderResult() {
