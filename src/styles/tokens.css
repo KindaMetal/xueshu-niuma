@@ -41,6 +41,28 @@ body {
   background-attachment: fixed;
 }
 
+/* CRT 显像管扫描线与暗角覆盖层 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* 绝对不能阻挡点击事件 */
+  z-index: 9999;
+  
+  /* 极细扫描线 */
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  
+  /* 屏幕四周的复古监视器暗角 (Vignette) */
+  box-shadow: inset 0 0 120px rgba(0,0,0,0.95);
+}
+
 .btn-sketch {
   appearance: none;
   background: var(--c-surface);
