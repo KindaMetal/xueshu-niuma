@@ -1,7 +1,7 @@
 // 赛博塔罗底层音效合成引擎 (基于原生 Web Audio API, 零外部资源依赖)
 export class AudioEngine {
   constructor() {
-    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+    this.ctx = null;
     this.isMuted = false;
     this.bgmOscillator = null;
     this.bgmGain = null;
@@ -11,6 +11,7 @@ export class AudioEngine {
   // 必须由用户真实点击触发初始化以绕过浏览器安全限制
   init() {
     if (this.initialized) return;
+    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
     if (this.ctx.state === 'suspended') {
       this.ctx.resume();
     }
